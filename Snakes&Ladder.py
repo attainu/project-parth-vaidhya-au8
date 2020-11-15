@@ -24,4 +24,10 @@ def got_snake_bite(old_value, current_value, player_name):
     print("\n" + random.choice(snake_bite).upper() + " ~~~~~~~~>")
     print("\n" + player_name + " You Got Bittttennn🐍🐍🐍🐍 Slipped from " + str(old_value) + " to " + str(current_value))
 
+# Module to climb ladder
+def got_ladder_jump(old_value, current_value, player_name):
+    print("\n" + random.choice(ladder_jump).upper() + " ########")
+    print("\n" + player_name + " climbed the ladder from " + str(old_value) + " to " + str(current_value))
+
+
 
