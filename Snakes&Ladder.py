@@ -123,12 +123,12 @@ def get_dice_value():
 
 # Module for snake bite
 def got_snake_bite(old_value, current_value, player_name):
-    print("\n" + random.choice(snake_bite).upper() + " ~~~~~~~~>")
-    print("\n" + player_name + " You Got Bittttennn🐍🐍🐍🐍 Slipped from " + str(old_value) + " to " + str(current_value))
+    print("\n" + random.choice(snake_bite).upper() + " Hissssssss")
+    print("\n" + player_name + " You Got Bittttennn Slipped from " + str(old_value) + " to " + str(current_value))
 
 # Module to climb ladder
 def got_climb_ladder(old_value, current_value, player_name):
-    print("\n" + random.choice(climb_ladder).upper() + " ########")
+    print("\n" + random.choice(climb_ladder).upper() + " _/ _/ _/ _/")
     print("\n" + player_name + " climbed the ladder from " + str(old_value) + " to " + str(current_value))
 
 # Player increment from one place to the other
@@ -138,7 +138,7 @@ def snake_ladder(player_name, current_value, dice_value):
     current_value = current_value + dice_value
 
     if current_value > MAX_VAL:
-        print("You need " + str(MAX_VAL - old_value) + " to win this game. Keep trying.")
+        print("You need " + str(MAX_VAL - old_value) + " to Win .")
         return old_value
 
     print("\n" + player_name + " moved from " + str(old_value) + " to " + str(current_value))
