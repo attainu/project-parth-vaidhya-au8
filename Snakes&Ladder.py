@@ -19,3 +19,9 @@ def get_dice_value():
     print("You got  " + str(dice_value))
     return dice_value 
 
+# Module for snake bite
+def got_snake_bite(old_value, current_value, player_name):
+    print("\n" + random.choice(snake_bite).upper() + " ~~~~~~~~>")
+    print("\n" + player_name + " You Got Bittttennn🐍🐍🐍🐍 Slipped from " + str(old_value) + " to " + str(current_value))
+
+
