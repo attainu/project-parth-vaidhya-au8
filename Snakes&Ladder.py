@@ -1,3 +1,7 @@
+import time
+import random
+import sys
+
 
 def welcome_msg():
     msg = """
@@ -10,9 +14,6 @@ def welcome_msg():
     
     """
     print(msg)
-
-
-
 
 # Player information and input
 def get_player_names():
@@ -74,7 +75,39 @@ def check_win(player_name, position):
     if MAX_VAL == position:
         print("\n\n\Thats it.\n\n" + player_name + " You dodged all the snakes")
         print("!!!!...YOU WON..!!! " + player_name)
-        sys.exit(1)    
+        sys.exit(1)   
+
+def start():
+    welcome_msg()
+    time.sleep(SLEEP_BETWEEN_ACTIONS)
+    player1_name, player2_name = get_player_names()
+    time.sleep(SLEEP_BETWEEN_ACTIONS)
+
+    player1_current_position = 0
+    player2_current_position = 0
+
+    while True:
+        time.sleep(SLEEP_BETWEEN_ACTIONS)
+        input_1 = input("\n" + player1_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ")
+        print("\nRolling dice...")
+        dice_value = get_dice_value()
+        time.sleep(SLEEP_BETWEEN_ACTIONS)
+        print(player1_name + " moving....")
+        player1_current_position = snake_ladder(player1_name, player1_current_position, dice_value)
+
+        check_win(player1_name, player1_current_position)
+
+        input_2 = input("\n" + player2_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ")
+        print("\nRolling dice...")
+        dice_value = get_dice_value()
+        time.sleep(SLEEP_BETWEEN_ACTIONS)
+        print(player2_name + " moving....")
+        player2_current_position = snake_ladder(player2_name, player2_current_position, dice_value)
+
+        check_win(player2_name, player2_current_position)
+
+if __name__ == "__main__":
+    start()
 
 
 
