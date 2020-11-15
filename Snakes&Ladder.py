@@ -2,7 +2,7 @@ import time
 import random
 import sys
 
-SLEEP_BETWEEN_ACTIONS = 1
+SLEEP_BETWEEN_ACTIONS = 3
 MAX_VAL = 100
 DICE_FACE = 6
 
@@ -42,6 +42,30 @@ ladders = {
     88: 91
 }
 
+player_turn_text = [
+    "Your turn.",
+    "Go.",
+    "Please proceed.",
+    "Lets win this.",
+    "Are you ready?",
+    "",
+]
+
+snake_bite = [
+    "boohoo",
+    "bummer",
+    "snake bite",
+    "oh no",
+    "dang"
+]
+
+ladder_jump = [
+    "woohoo",
+    "woww",
+    "nailed it",
+    "oh my God...",
+    "yaayyy"
+]
 
 
 
