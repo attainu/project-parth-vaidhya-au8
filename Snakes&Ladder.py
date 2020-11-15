@@ -1,4 +1,19 @@
 
+def welcome_msg():
+    msg = """
+    Welcome to the Python based Snakes and Ladder Game
+
+    1. Enter your names as prompted by the game.   
+    2. Press ENTER key to roll the dice.
+    3. Ladder helps you to go up while snake will pull you down
+    4. The first player to get to reach 100 is the winner.
+    
+    """
+    print(msg)
+
+
+
+
 # Player information and input
 def get_player_names():
     player1_name = None
@@ -60,6 +75,7 @@ def check_win(player_name, position):
         print("\n\n\Thats it.\n\n" + player_name + " You dodged all the snakes")
         print("!!!!...YOU WON..!!! " + player_name)
         sys.exit(1)    
+
 
 
 
