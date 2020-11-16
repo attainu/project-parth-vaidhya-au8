@@ -3,45 +3,10 @@ import sys
 import time
 
 TIME_LAPSE = 3
-MAX_VAL = 100
+WIN_NUM = 100
 DICE_FACE = 6
 
-# snake takes you down from 'key' to 'value'
-# snakes = {
-#     8: 4,
-#     18: 1,
-#     26: 10,
-#     39: 5,
-#     51: 6,
-#     54: 36,
-#     56: 1,
-#     60: 23,
-#     75: 28,
-#     83: 45,
-#     85: 59,
-#     90: 48,
-#     92: 25,
-#     97: 87,
-#     99: 63
-# }
-
 # ladder takes you up from 'key' to 'value'
-# ladders = {
-#     3: 20,
-#     6: 14,
-#     11: 28,
-#     15: 34,
-#     17: 74,
-#     22: 37,
-#     38: 59,
-#     49: 67,
-#     57: 76,
-#     61: 78,
-#     73: 86,
-#     81: 98,
-#     88: 91
-# }
-
 ladders = {
     1:38,
     4:14,
@@ -54,6 +19,7 @@ ladders = {
     80:100
 }
 
+# snake takes you down from 'key' to 'value'
 snakes = {
     98:78,
     95:75,
@@ -111,7 +77,6 @@ def get_player_names():
     while not player2_name:
         player2_name = input("Please enter your correct name player-2: ").strip()
 
-    print("\nMatch will be played between '" + player1_name + "' and '" + player2_name + "'\n")
     return player1_name, player2_name
 
 # number displayed on dice
@@ -137,8 +102,8 @@ def snake_ladder(player_name, current_value, dice_value):
     old_value = current_value
     current_value = current_value + dice_value
 
-    if current_value > MAX_VAL:
-        print("You need " + str(MAX_VAL - old_value) + " to Win .")
+    if current_value > WIN_NUM:
+        print("You need " + str(WIN_NUM - old_value) + " to Win .")
         return old_value
 
     print("\n" + player_name + " moved from " + str(old_value) + " to " + str(current_value))
@@ -158,7 +123,7 @@ def snake_ladder(player_name, current_value, dice_value):
 # Condition for winning
 def check_win(player_name, position):
     time.sleep(TIME_LAPSE)
-    if MAX_VAL == position:
+    if WIN_NUM == position:
         print("\n\n\Thats it.\n\n" + player_name + " You dodged all the snakes")
         print("!!!!...YOU WON..!!! " + player_name)
         sys.exit(1)   
