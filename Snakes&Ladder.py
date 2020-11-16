@@ -59,11 +59,10 @@ def intro():
     msg = """
     Welcome to the Python based Snakes and Ladder Game
 
-    1. Enter your names as prompted by the game.   
+    1. Enter your names as prompted by the game.
     2. Press ENTER key to roll the dice.
     3. Ladder helps you to go up while snake will pull you down.
     4. The first player to get to reach 100 is the winner.
-   
     """
     print(msg)
 
@@ -86,21 +85,21 @@ def get_dice_value():
     time.sleep(TIME_LAPSE)
     dice_value = random.randint(1, DICE_FACE)
     print("You got  " + str(dice_value))
-    return dice_value 
+    return dice_value
 
 
 # Module for snake bite
 def got_snake_bite(old_value, current_value, player_name):
     print("\n" + random.choice(snake_bite).upper() + " Hissssssss")
-    print("\n" + player_name + "You Got Bitten Slipped from" + \
-        str(old_value) + "to" + str(current_value))
+    print("\n" + player_name + "You Got Bitten Slipped from" +
+          str(old_value) + "to" + str(current_value))
 
 
 # Module to climb ladder
 def got_climb_ladder(old_value, current_value, player_name):
     print("\n" + random.choice(climb_ladder).upper() + " _/ _/ _/ _/")
-    print("\n" + player_name + "climbed the ladder from" + \
-        str(old_value) + "to" + str(current_value))
+    print("\n" + player_name + "climbed the ladder from" +
+          str(old_value) + "to" + str(current_value))
 
 
 # Player increment from one place to the other
@@ -113,7 +112,8 @@ def snake_ladder(player_name, current_value, dice_value):
         print("You need " + str(WIN_NUM - old_value) + " to Win .")
         return old_value
 
-    print("\n" + player_name + " moved from " + str(old_value) + " to " + str(current_value))
+    print("\n" + player_name + " moved from " + str(old_value) + " to " + str
+          (current_value))
     if current_value in snakes:
         final_value = snakes.get(current_value)
         got_snake_bite(current_value, final_value, player_name)
@@ -132,9 +132,8 @@ def snake_ladder(player_name, current_value, dice_value):
 def check_win(player_name, position):
     time.sleep(TIME_LAPSE)
     if WIN_NUM == position:
-        print("\n\n\Thats it.\n\n" + player_name + " You dodged all the snakes")
-        print("!!!!...YOU WON..!!! " + player_name)
-        sys.exit(1)   
+        print("\n\nThats it\n\n" + player_name + "You dodged all the snakes")
+        print("!!!!...YOU WON..!!!" + player_name)
 
 
 def start():
@@ -149,21 +148,21 @@ def start():
 
     while True:
         time.sleep(TIME_LAPSE)
-        input_1 = input("\n" + player1_name + ": " + random.choice(player_turn_text) + " Press ENTER to Roll the Dice ")
+        input_1 = input("\n" + player1_name + ": " + random.choice(player_turn_text) + " Press ENTER to Roll the Dice ")# noqa
         print("\nRolling dice...")
         dice_value = get_dice_value()
         time.sleep(TIME_LAPSE)
         print(player1_name + " moving....")
-        player1_current_position = snake_ladder(player1_name, player1_current_position, dice_value)
+        player1_current_position = snake_ladder(player1_name, player1_current_position, dice_value) # noqa
 
         check_win(player1_name, player1_current_position)
 
-        input_2 = input("\n" + player2_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ")
+        input_2 = input("\n" + player2_name + ": " + random.choice(player_turn_text) + " Hit the enter to roll dice: ") # noqa
         print("\nRolling dice...")
         dice_value = get_dice_value()
         time.sleep(TIME_LAPSE)
         print(player2_name + " moving....")
-        player2_current_position = snake_ladder(player2_name, player2_current_position, dice_value)
+        player2_current_position = snake_ladder(player2_name, player2_current_position, dice_value) # noqa
 
         check_win(player2_name, player2_current_position)
 
