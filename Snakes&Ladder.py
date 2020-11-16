@@ -89,30 +89,30 @@ def get_dice_value():
 
 
 # Module for snake bite
-def got_snake_bite(old_value, current_value, player_name):
+def got_snake_bite(prev_value, current_value, player_name):
     print("\n" + random.choice(snake_bite).upper() + " Hissssssss")
     print("\n" + player_name + "You Got Bitten Slipped from" +
-          str(old_value) + "to" + str(current_value))
+          str(prev_value) + "to" + str(current_value))
 
 
 # Module to climb ladder
-def got_climb_ladder(old_value, current_value, player_name):
+def got_climb_ladder(prev_value, current_value, player_name):
     print("\n" + random.choice(climb_ladder).upper() + " _/ _/ _/ _/")
     print("\n" + player_name + "climbed the ladder from" +
-          str(old_value) + "to" + str(current_value))
+          str(prev_value) + "to" + str(current_value))
 
 
 # Player increment from one place to the other
 def snake_ladder(player_name, current_value, dice_value):
     time.sleep(TIME_LAPSE)
-    old_value = current_value
+    prev_value = current_value
     current_value = current_value + dice_value
 
     if current_value > WIN_NUM:
-        print("You need " + str(WIN_NUM - old_value) + " to Win .")
-        return old_value
+        print("You need " + str(WIN_NUM - prev_value) + " to Win .")
+        return prev_value
 
-    print("\n" + player_name + " moved from " + str(old_value) + " to " + str
+    print("\n" + player_name + " moved from " + str(prev_value) + " to " + str
           (current_value))
     if current_value in snakes:
         final_value = snakes.get(current_value)
