@@ -94,14 +94,14 @@ def get_dice_value():
 # Module for snake bite
 def got_snake_bite(prev_value, current_value, player_name):
     print("\n" + random.choice(snake_bite).upper() + " Hissssssss")
-    print("\n" + player_name + "You Got Bitten Slipped from" +
+    print("\n" + player_name + "You Got Bitten Slipped from " +
           str(prev_value) + "to" + str(current_value))
 
 
 # Module to climb ladder
 def got_climb_ladder(prev_value, current_value, player_name):
     print("\n" + random.choice(climb_ladder).upper() + " _/ _/ _/ _/")
-    print("\n" + player_name + "climbed the ladder from" +
+    print("\n" + player_name + "climbed the ladder from " +
           str(prev_value) + "to" + str(current_value))
 
 
@@ -135,7 +135,7 @@ def snake_ladder(player_name, current_value, dice_value):
 def check_win(player_name, position):
     time.sleep(TIME_LAPSE)
     if WIN_NUM == position:
-        print("\n\nThats it\n\n" + player_name + "You dodged all the snakes")
+        print("\n\nThats it\n\n" + player_name + "You dodged all the snakes ")
         print("!!!!...YOU WON..!!!" + player_name)
         sys.exit(1)
 
