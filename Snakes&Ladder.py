@@ -1,7 +1,7 @@
 import random
 import time
 
-TIME_LAPSE = 1
+TIME_LAPSE = 2
 WIN_NUM = 100
 DICE_FACE = 6
 
@@ -57,7 +57,7 @@ climb_ladder = [
 
 def intro():
     msg = """
-    Welcome to the Python based Snakes and Ladder Game
+    Welcome to the Text-based Snakes and Ladder Game
 
     1. Enter your names as prompted by the game.
     2. Press ENTER key to roll the dice.
@@ -72,10 +72,12 @@ def get_player_names():
     player1_name = None
     while not player1_name:
         player1_name = input("Pls enter your correct name player-1: ").strip()
+        input("Press enter to continue")
 
     player2_name = None
     while not player2_name:
         player2_name = input("Pls enter your correct name player-2: ").strip()
+        input("Press enter to continue")
 
     return player1_name, player2_name
 
@@ -138,10 +140,12 @@ def check_win(player_name, position):
 
 def start():
     print()
-    player1_name, player2_name = get_player_names()
-    time.sleep(TIME_LAPSE)
     intro()
     time.sleep(TIME_LAPSE)
+    player1_name, player2_name = get_player_names()
+    time.sleep(TIME_LAPSE)
+    # intro()
+    # time.sleep(TIME_LAPSE)
 
     player1_current_position = 0
     player2_current_position = 0
