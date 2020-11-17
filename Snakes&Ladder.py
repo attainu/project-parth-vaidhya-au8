@@ -1,3 +1,4 @@
+import sys
 import random
 import time
 
@@ -136,6 +137,7 @@ def check_win(player_name, position):
     if WIN_NUM == position:
         print("\n\nThats it\n\n" + player_name + "You dodged all the snakes")
         print("!!!!...YOU WON..!!!" + player_name)
+        sys.exit(1)
 
 
 def start():
