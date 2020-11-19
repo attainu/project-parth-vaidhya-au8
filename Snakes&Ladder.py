@@ -58,7 +58,7 @@ climb_ladder = [
 
 def intro():
     msg = """
-    Welcome to the Text-based Snakes and Ladder Game
+    Welcome Amigos.!! To the Text-based Snakes and Ladder Game
 
     1. Enter your names as prompted by the game.
     2. Press ENTER key to roll the dice.
@@ -83,7 +83,8 @@ def get_player_names():
     return player1_name, player2_name
 
 
-# number displayed on dice
+# number displayed on dice: used random.randint  for
+# generating random number between given range
 def get_dice_value():
     time.sleep(TIME_LAPSE)
     dice_value = random.randint(1, DICE_FACE)
@@ -93,7 +94,7 @@ def get_dice_value():
 
 # Module for snake bite
 def got_snake_bite(prev_value, current_value, player_name):
-    print("\n" + random.choice(snake_bite).upper() + " Hissssssss")
+    print("\n" + random.choice(snake_bite).upper() + " Hissssssss")# noqa
     print("\n" + player_name + "You Got Bitten Slipped from " +
           str(prev_value) + "to" + str(current_value))
 
